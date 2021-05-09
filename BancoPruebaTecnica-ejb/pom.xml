@@ -20,6 +20,7 @@
     </properties>
 
     <dependencies>
+        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
@@ -33,14 +34,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>jta-ejb</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>edu.unicundi</groupId>
-            <artifactId>maestros-ejb</artifactId>
+            <groupId>co.banco</groupId>
+            <artifactId>BancoPruebaTecnica-ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
         </dependency>

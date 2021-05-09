@@ -22,7 +22,7 @@ public class UsuarioServiceImpl implements IServiceUsuario{
     
     @Override
     public void insertar(Usuario usuario) throws ConstraintViolationException {
-        
+        System.out.println("entro a guardar");
         repo.insertar(usuario);
     }
 

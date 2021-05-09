@@ -21,15 +21,15 @@ public class UsuarioDto implements  Serializable{
     
     private String apellido;
     
-    private Date fecha;
+    private String ocupacion;
     
     private String sexo;
 
-    public UsuarioDto(Integer id, String nombre, String apellido, Date fecha, String sexo) {
+    public UsuarioDto(Integer id, String nombre, String apellido, String ocupacion, String sexo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.ocupacion = ocupacion;
         this.sexo = sexo;
     }
     public UsuarioDto() {
@@ -59,20 +59,20 @@ public class UsuarioDto implements  Serializable{
         this.apellido = apellido;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
     public String getSexo() {
         return sexo;
     }
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String getOcupacion() {
+        return ocupacion;
+    }
+
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
     }
 
    
