@@ -21,6 +21,9 @@ import javax.validation.ConstraintViolationException;
 public interface IUsuarioRepo {
     
     public void insertar(Usuario usuario) throws ConstraintViolationException;
-    
+    public void editar(Usuario usuario) throws NotAllowedException;
+    public Usuario listarPorId(Integer id) throws NotAllowedException;
+    public List<Usuario> listar() throws NotAllowedException;
+    public void eliminar(Usuario usuario) throws ObjectNotFoundException;
 
 }

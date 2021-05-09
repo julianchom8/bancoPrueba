@@ -5,6 +5,7 @@ import co.banco.entity.Usuario;
 import co.banco.exception.ObjectNotFoundException;
 import co.banco.exception.ParamRequiredException;
 import co.banco.service.IServiceUsuario;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.validation.Valid;
@@ -57,6 +58,20 @@ public class UsuarioController {
        service.eliminar(id);
         return Response.status(Response.Status.NO_CONTENT).build();
     }
-    
+    @Path("/retornarPorId/{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response retornarPorId(@PathParam("id") Integer id)throws ObjectNotFoundException {
+       Usuario usuario = service.listarPorId(id);
+        return Response.status(Response.Status.OK).entity(usuario).build();
+       
+    }
+    @Path("/listar")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response retornarProfesor() throws ObjectNotFoundException {
+        List<Usuario> listaProfesor = service.listar();
+         return Response.status(Response.Status.OK).entity(listaProfesor).build();
+    }
 }
 
