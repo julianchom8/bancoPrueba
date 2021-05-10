@@ -11,7 +11,7 @@ import javax.ws.rs.ext.Provider;
  * Filtro que captura la excepcion que se dispara cuando ocurre un 404
  *
  * @author Julian Medina
- * @version 1.0.0
+ * @version 1.2.0
  */
 @Provider
 public class NotFoundExceptionFilter implements ExceptionMapper<NotFoundException> {

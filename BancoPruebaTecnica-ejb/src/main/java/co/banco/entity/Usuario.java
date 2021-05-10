@@ -10,22 +10,31 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 @Entity
 @Table(name = "usuario")
 @NamedQueries({
-    @NamedQuery(name = "Usuario.listar", query ="SELECT p FROM Usuario p")
+    @NamedQuery(name = "Usuario.listar", query ="SELECT u FROM Usuario u"),
+     @NamedQuery(name = "Usuario.validarCedula", query ="SELECT COUNT(p.cedula) FROM Usuario p WHERE p.cedula = :cedula AND p.id <> :id"),
+    @NamedQuery(name = "Usuario.validarCedulaGuardar", query ="SELECT COUNT(p.cedula) FROM Usuario p WHERE p.cedula = :cedula "),
+    @NamedQuery(name = "Usuario.cantidadTotal", query = "SELECT COUNT(a) FROM Usuario a")
 })
 public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @NotNull(message = "Campo requerido: Cedula!")
+    @Min(value = 10, message = "Formato incorrecto!")
+    @Column(name = "cedula", length = 10    , nullable = false, unique = true)
+    private String cedula;
     
     @NotNull(message = "Campo requerido: nombre!")
     @Column(name = "nombre", length = 25, nullable = false)
@@ -46,12 +55,13 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nombre, String apellido, String ocupacion, String sexo) {
+    public Usuario(Integer id, String nombre, String apellido, String ocupacion, String sexo, String cedula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.ocupacion = ocupacion;
         this.sexo = sexo;
+        this.cedula = cedula;
     }
 
     public Integer getId() {
@@ -92,6 +102,14 @@ public class Usuario implements Serializable{
 
     public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
     
 }

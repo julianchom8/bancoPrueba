@@ -7,7 +7,7 @@ import javax.ws.rs.core.Application;
 /**
  *
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 @javax.ws.rs.ApplicationPath("webresources")
 public class ApplicationConfig extends Application {
@@ -27,14 +27,17 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.banco.controller.UsuarioController.class);
+        resources.add(co.banco.exception.CorsFilter.class);
         resources.add(co.banco.exception.ObjectNotFoundException.class);
         resources.add(co.banco.filtro.ConstraintViolationFilter.class);
+        resources.add(co.banco.filtro.CorsFilter.class);
         resources.add(co.banco.filtro.NotAllowedExceptionFilter.class);
         resources.add(co.banco.filtro.NotFoundExceptionFilter.class);
         resources.add(co.banco.filtro.NotSupportedExceptionFilter.class);
         resources.add(co.banco.filtro.ObjectNotFoundExceptionFiltro.class);
         resources.add(co.banco.filtro.ParamRequiredExceptionFilter.class);
         resources.add(co.banco.filtro.ParamRequiredExceptionFilter1.class);
+        resources.add(co.banco.filtro.ParamUsedExceptionFilter.class);
         resources.add(co.banco.filtro.WebApplicationExceptionFilter.class);
     }
     

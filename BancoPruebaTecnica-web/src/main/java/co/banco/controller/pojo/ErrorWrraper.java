@@ -2,14 +2,11 @@
 package co.banco.controller.pojo;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 
 /**
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 public class ErrorWrraper implements Serializable{
     private String error;

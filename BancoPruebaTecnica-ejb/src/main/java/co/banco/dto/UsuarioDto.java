@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.banco.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  *
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 public class UsuarioDto implements  Serializable{
     
@@ -24,13 +19,16 @@ public class UsuarioDto implements  Serializable{
     private String ocupacion;
     
     private String sexo;
+    
+    private String cedula;
 
-    public UsuarioDto(Integer id, String nombre, String apellido, String ocupacion, String sexo) {
+    public UsuarioDto(Integer id, String nombre, String apellido, String ocupacion, String sexo, String cedula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.ocupacion = ocupacion;
         this.sexo = sexo;
+        this.cedula =cedula;
     }
     public UsuarioDto() {
     }
@@ -73,6 +71,14 @@ public class UsuarioDto implements  Serializable{
 
     public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
    

@@ -9,6 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 /**
  *
  * @author Julian Medina
+ * @version 1.2.0
  */
 public abstract class AbstractFacade<T, V> {
       

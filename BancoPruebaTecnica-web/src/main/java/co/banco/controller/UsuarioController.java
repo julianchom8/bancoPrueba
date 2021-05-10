@@ -1,6 +1,7 @@
 
 package co.banco.controller;
 
+import co.banco.dto.UsuarioPaginadoDto;
 import co.banco.entity.Usuario;
 import co.banco.exception.ObjectNotFoundException;
 import co.banco.exception.ParamRequiredException;
@@ -23,6 +24,7 @@ import javax.ws.rs.core.Response;
 /**
  *
  * @author Julian Medina
+ * @version 1.2.0
  */
 @Stateless
 @Path("/usuario")
@@ -72,6 +74,13 @@ public class UsuarioController {
     public Response retornarProfesor() throws ObjectNotFoundException {
         List<Usuario> listaProfesor = service.listar();
          return Response.status(Response.Status.OK).entity(listaProfesor).build();
+    }
+    @Path("/retornarPaginado/{page}/{size}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response retornarPorId(@PathParam("page") Integer page, @PathParam("size") Integer size)  {
+        UsuarioPaginadoDto lista = service.listarPaginado(page, size);
+        return Response.status(Response.Status.OK).entity(lista).build();       
     }
 }
 

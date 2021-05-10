@@ -10,7 +10,7 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 //Error de validaciones
 @Provider

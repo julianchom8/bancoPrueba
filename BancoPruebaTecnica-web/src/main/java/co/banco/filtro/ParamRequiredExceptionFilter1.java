@@ -11,7 +11,7 @@ import javax.ws.rs.ext.Provider;
 /**
  *
  * @author Julian Medina
- * @version 1.0
+ * @version 1.2.0
  */
 @Provider
 public class ParamRequiredExceptionFilter1 implements ExceptionMapper<ParamRequiredException> {
